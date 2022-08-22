@@ -18,20 +18,21 @@ public class FechaApiRestController {
     FechaService fechaService;
 
     @RequestMapping("/obtener")
-    public List<Fecha> obtenerListaFecha(){
+    public List<Fecha> obtenerFecha(){
         List<Fecha> listadoFecha = fechaService.findAll();
         return listadoFecha;
 
     }
 
     @PostMapping(value = "/guardar")
-    public ResponseEntity<Fecha> registrarFecha(@RequestBody Fecha fecha){
-        fechaService.guardarFecha(fecha);
+    public ResponseEntity<Fecha> guardarFecha(@RequestBody Fecha fecha){
+        fechaService.actualizarFecha(fecha);
+
         return new ResponseEntity<Fecha>(fecha, HttpStatus.OK);
     }
 
     @PostMapping(value = "/eliminar/{id}")
-    public ResponseEntity<Fecha> eliminarCliente(@PathVariable Long id){
+    public ResponseEntity<Fecha> eliminarFecha(@PathVariable Long id){
         try{
             fechaService.deletedById(id);
             return new ResponseEntity<Fecha>(HttpStatus.OK);
