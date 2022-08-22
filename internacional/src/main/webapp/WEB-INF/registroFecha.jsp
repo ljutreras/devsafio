@@ -18,6 +18,7 @@
             <th scope="col">ID</th>
             <th scope="col">Año</th>
             <th scope="col">Cantidad Feriados</th>
+            <th scope="col">Dias Totales</th>
             <th scope="col">Dias laborales</th>
         </tr>
         </thead>
@@ -27,6 +28,8 @@
                 <th scope="row">${fecha.id}</th>
                 <td>${fecha.anio}</td>
                 <td>${fecha.feriados}</td>
+                <td>${fecha.diasTotales}</td>
+                <td>${fecha.diasLaborales}</td>
                 <td><a class="btn btn-danger" href="/fecha/eliminar/${fecha.id}" role="button">Eliminar</a></td>
             </tr>
         </c:forEach>
